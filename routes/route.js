@@ -32,7 +32,7 @@ router.post('/send',
 
       
         var temp=req.body.cc;
-        var gg =temp.split('')
+        var gg =temp.split(',')
        
         console.log(gg)
         var obj={
