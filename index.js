@@ -1,5 +1,5 @@
 const express = require("express");
-var emailRouter = require("./routes/route");
+var emailRouter = require("./routes/email");
 
 const port = process.env.PORT || 3000;
 
