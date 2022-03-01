@@ -5,12 +5,8 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
-
+//routes
 app.use("/", emailRouter);
 
 app.listen(port, () => {

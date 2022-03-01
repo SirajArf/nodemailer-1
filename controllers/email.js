@@ -21,8 +21,7 @@ module.exports = {
       storage: Storage,
     }).single("image");
     upload(req, res, function (err) {
-      console.log("first");
-      console.log(req.body);
+    
       var temp = req.body.cc;
       var cc = temp.split(",");
       var obj = {
