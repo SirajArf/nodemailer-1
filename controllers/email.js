@@ -2,8 +2,12 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 const multer = require("multer");
 const fs = require('fs');
+const apiResponse = require('../utils/apiResponse');
 
 module.exports = {
+  /*
+ * Uploads Files and  Sends mail
+  */
   upload: async function (req, res) {
     var Storage = multer.diskStorage({
       destination: function (req, file, callback) {
@@ -69,7 +73,11 @@ module.exports = {
           }
           if (!obj.path) {
             console.log("EMAIL sent: " + info.response);
-            return res.redirect("/result.html");
+            return apiResponse(res,{
+              status:200,
+              message:"Mail sent!"
+            });
+            //  return res.redirect("/result.html");
           } else {
             console.log("EMAIL sent: " + info.response);
             fs.unlink(obj.path, function (err) {
